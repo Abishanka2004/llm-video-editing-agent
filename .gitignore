@@ -1,7 +1,9 @@
 __pycache__/
 vea_env/
 output/
+analysis/
 *.pyc
 .env
 *.mp4
 *.mp3
+test.py
