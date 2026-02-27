@@ -11,4 +11,5 @@ Functionality:
 * Execute multiple tasks from a single instruction
 
 Motivation: 
+
 I wanted to explore how LLMs can be combined with structured tool execution to build real-world AI agents, instead of just text-based chatbots. This project demonstrates autonomous task planning and multi-step execution in a practical domain (video processing).
