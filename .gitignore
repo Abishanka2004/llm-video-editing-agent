@@ -1,2 +1,7 @@
 __pycache__/
 vea_env/
+output/
+*.pyc
+.env
+*.mp4
+*.mp3
