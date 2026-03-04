@@ -1,6 +1,10 @@
 streamlit
-moviepy
+langgraph
+langchain-core
+langchain-groq
 openai-whisper
-ffmpeg-python
+moviepy
 pydub
-opencv-python
+imageio-ffmpeg
+torch
+numpy
