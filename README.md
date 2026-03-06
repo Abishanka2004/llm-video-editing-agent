@@ -1,5 +1,7 @@
 LLM Video Editing Agent
 
+[!StreamLit App](https://video-processing-agent.streamlit.app/)
+
 This project is an AI-powered video editing agent that understands natural language instructions and performs video processing tasks automatically.
 It uses LangGraph for orchestration, a Groq-hosted LLM for task reasoning, Whisper for speech recognition, and FFmpeg for video processing.
 
