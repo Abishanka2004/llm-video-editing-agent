@@ -1,34 +1,24 @@
-import sys
 import os
-
-# FIX PATH
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from moviepy.editor import VideoFileClip
-from pydub import AudioSegment, silence
-import imageio_ffmpeg
-from config import FINAL_OUTPUT
-
-# Fix ffmpeg path
-AudioSegment.converter = imageio_ffmpeg.get_ffmpeg_exe()
-
+import subprocess
 
 def remove_silence(input_video):
 
-    video = VideoFileClip(input_video)
+    print("Removing silence from video...")
 
-    video.audio.write_audiofile("temp.wav")
+    output_video = "output/no_silence.mp4"
 
-    sound = AudioSegment.from_wav("temp.wav")
+    command = [
+        "ffmpeg",
+        "-y",
+        "-i", input_video,
+        "-af",
+        "silenceremove=start_periods=1:start_threshold=-50dB:start_silence=0.5:stop_periods=-1:stop_threshold=-50dB:stop_silence=0.5",
+        "-c:v", "copy",
+        output_video
+    ]
 
-    chunks = silence.split_on_silence(
-        sound,
-        min_silence_len=700,
-        silence_thresh=-40
-    )
+    subprocess.run(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-    combined = sum(chunks)
+    print("Silence removal complete")
 
-    combined.export(FINAL_OUTPUT, format="wav")
-
-    return FINAL_OUTPUT
+    return output_video

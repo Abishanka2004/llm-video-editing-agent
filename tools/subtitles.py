@@ -20,7 +20,6 @@ def generate_subtitles(input_video):
 
     srt_file = "output/subtitles.srt"
 
-    # Create SRT file
     with open(srt_file, "w", encoding="utf-8") as f:
 
         for i, segment in enumerate(segments, start=1):
@@ -35,7 +34,6 @@ def generate_subtitles(input_video):
 
     print("Subtitles file created")
 
-    # Burn subtitles into video using FFmpeg
     cmd = f'ffmpeg -y -i "{input_video}" -vf subtitles="{srt_file}" "{FINAL_OUTPUT}"'
 
     subprocess.run(cmd, shell=True)

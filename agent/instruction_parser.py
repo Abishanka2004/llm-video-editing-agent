@@ -39,7 +39,6 @@ def parse_instruction(text):
     ]
 
 
-    # CHECK EACH CATEGORY
 
     if any(keyword in text for keyword in subtitle_keywords):
 

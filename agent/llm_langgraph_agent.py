@@ -67,7 +67,7 @@ Example:
     except:
         tasks = []
 
-    # 🔒 Safety filter — only allow valid tasks
+
     allowed = {"extract_audio", "generate_subtitles", "trim", "remove_silence"}
     tasks = [t for t in tasks if t in allowed]
 

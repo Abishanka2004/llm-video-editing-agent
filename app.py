@@ -11,7 +11,7 @@ from agent.planner import create_plan
 from agent.llm_langgraph_agent import create_agent
 
 
-st.title("🎬 Video Editor Agent")
+st.title("Video Editor Agent")
 
 video_file = st.file_uploader("Upload Video", type=["mp4"])
 
@@ -29,7 +29,6 @@ if st.button("Run Agent"):
         st.write("Parsing instruction...")
         tasks = parse_instruction(instruction)
 
-        # ✅ DEBUG LINE ADDED HERE
         st.write("Tasks identified:", tasks)
 
         st.write("Planning...")

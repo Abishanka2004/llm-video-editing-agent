@@ -1,7 +1,6 @@
 import sys
 import os
 
-# FIX PATH
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from tools.extract_audio import extract_audio
